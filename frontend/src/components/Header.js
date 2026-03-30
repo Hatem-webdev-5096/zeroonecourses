@@ -30,36 +30,54 @@ export const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close menu when link is clicked
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className={isNavVisible ? 'nav-visible' : 'nav-hidden'}>
       <div className="nav-container">
-        <Link to="/" className="logo">
+        <Link to="/" className="logo" onClick={handleLinkClick}>
           <img src="/Logo.png" alt="ZeroOne Courses" className="logo-image" />
         </Link>
 
-        <ul className="nav-links">
+        {/* Hamburger Menu Button */}
+        <button
+          className={`hamburger ${isMenuOpen ? 'active' : ''}`}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Menu"
+          aria-expanded={isMenuOpen}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        {/* Navigation Links */}
+        <ul className={`nav-links ${isMenuOpen ? 'mobile-open' : ''}`}>
           <li>
-            <Link to="/" className={isActive('/') ? 'active' : ''}>
+            <Link to="/" className={isActive('/') ? 'active' : ''} onClick={handleLinkClick}>
               🏠 Home
             </Link>
           </li>
           <li>
-            <Link to="/courses" className={isActive('/courses') ? 'active' : ''}>
+            <Link to="/courses" className={isActive('/courses') ? 'active' : ''} onClick={handleLinkClick}>
               📚 Courses
             </Link>
           </li>
           <li>
-            <Link to="/gallery" className={isActive('/gallery') ? 'active' : ''}>
+            <Link to="/gallery" className={isActive('/gallery') ? 'active' : ''} onClick={handleLinkClick}>
               🎨 Gallery
             </Link>
           </li>
           <li>
-            <Link to="/about" className={isActive('/about') ? 'active' : ''}>
+            <Link to="/about" className={isActive('/about') ? 'active' : ''} onClick={handleLinkClick}>
               ℹ️ About
             </Link>
           </li>
           <li>
-            <Link to="/contact" className={isActive('/contact') ? 'active' : ''}>
+            <Link to="/contact" className={isActive('/contact') ? 'active' : ''} onClick={handleLinkClick}>
               📞 Contact
             </Link>
           </li>
