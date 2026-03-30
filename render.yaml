@@ -1,0 +1,51 @@
+services:
+  # Backend API Service
+  - type: web
+    name: zero-one-courses-api
+    env: node
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: DB_USER
+        scope: shared
+      - key: DB_PASSWORD
+        scope: shared
+      - key: DB_HOST
+        scope: shared
+      - key: DB_PORT
+        scope: shared
+      - key: DB_NAME
+        value: zero_one_courses
+      - key: JWT_SECRET
+        scope: shared
+      - key: CLOUDINARY_CLOUD_NAME
+        scope: shared
+      - key: CLOUDINARY_API_KEY
+        scope: shared
+      - key: CLOUDINARY_API_SECRET
+        scope: shared
+      - key: FRONTEND_URL
+        scope: shared
+
+  # Frontend Service
+  - type: web
+    name: zero-one-courses-frontend
+    env: node
+    plan: free
+    buildCommand: cd frontend && npm install && npm run build
+    startCommand: cd frontend && npx serve -s build -l 3000
+    envVars:
+      - key: REACT_APP_API_URL
+        scope: shared
+
+  # PostgreSQL Database
+  - type: pserv
+    name: zero-one-courses-db
+    plan: free
+    ipAllowList: []
+    version: "15"
