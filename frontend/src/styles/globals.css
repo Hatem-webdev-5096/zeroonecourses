@@ -186,11 +186,6 @@ nav.nav-hidden {
   transition: all 0.3s ease;
 }
 
-.logo:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 8px rgba(255, 193, 7, 0.5));
-}
-
 .logo-image {
   height: 55px;
   width: auto;
@@ -199,10 +194,6 @@ nav.nav-hidden {
   transition: transform 0.3s ease;
   display: block;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-}
-
-.logo:hover .logo-image {
-  transform: scale(1.1) rotate(2deg);
 }
 
 .nav-links {
@@ -700,6 +691,7 @@ nav.nav-hidden {
   display: flex;
   flex-direction: column;
   height: 100%;
+  max-width: 320px;
   border: 1px solid rgba(229, 57, 53, 0.1);
 }
 
