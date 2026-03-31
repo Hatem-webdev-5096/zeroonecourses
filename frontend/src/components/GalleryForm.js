@@ -107,9 +107,10 @@ const GalleryForm = ({ onClose, onGalleryAdded, editingItem = null }) => {
       }
 
       const token = localStorage.getItem('adminToken');
+      const baseUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
       const url = editingItem
-        ? `http://localhost:5000/api/gallery/${editingItem.id}`
-        : 'http://localhost:5000/api/gallery';
+        ? `${baseUrl}/gallery/${editingItem.id}`
+        : `${baseUrl}/gallery`;
 
       const payload = {
         title: formData.title,
