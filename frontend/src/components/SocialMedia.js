@@ -48,8 +48,8 @@ const SocialMedia = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.1, y: -5 }}
               >
-                <div>
-                  <img src={link.icon} alt={link.name} />
+                <div className="social-icon-wrapper">
+                  <img src={link.icon} alt={link.name} className="social-logo" />
                 </div>
                 <span className="social-name">{link.name}</span>
               </motion.a>
