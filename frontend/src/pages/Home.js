@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import CourseCard from '../components/CourseCard';
+import SocialMedia from '../components/SocialMedia';
 import { courseAPI } from '../api/client';
 import '../styles/globals.css';
 
@@ -127,6 +128,9 @@ export const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Social Media Section */}
+      <SocialMedia />
     </div>
   );
 };

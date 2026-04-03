@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import SocialMedia from '../components/SocialMedia';
 import { contactAPI } from '../api/client';
 import '../styles/globals.css';
 
@@ -296,6 +297,9 @@ export const Contact = () => {
           </div>
         </div>
       </section>
+
+      {/* Social Media Section */}
+      <SocialMedia />
     </div>
   );
 };

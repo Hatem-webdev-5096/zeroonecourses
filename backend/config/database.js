@@ -23,6 +23,8 @@ pool.query(`
     price DECIMAL(10, 2) NOT NULL,
     image_url VARCHAR(500),
     location_type VARCHAR(50) NOT NULL CHECK (location_type IN ('online', 'onsite', 'hybrid')),
+    course_length_hours INTEGER,
+    number_of_sessions INTEGER,
     featured BOOLEAN DEFAULT false,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP

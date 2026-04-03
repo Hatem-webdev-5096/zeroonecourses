@@ -164,6 +164,18 @@ export const CourseDetails = () => {
                 </a>
               )}
               </div>
+              {course.course_length_hours && (
+                <div className="meta-item">
+                  <span className="meta-icon">⏱️</span>
+                  <span>{course.course_length_hours} Hours</span>
+                </div>
+              )}
+              {course.number_of_sessions && (
+                <div className="meta-item">
+                  <span className="meta-icon">📅</span>
+                  <span>{course.number_of_sessions} Sessions</span>
+                </div>
+              )}
             </div>
 
             <div className="course-price">EGP {parseFloat(course.price).toFixed(2)}</div>

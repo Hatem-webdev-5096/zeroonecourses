@@ -1,0 +1,193 @@
+/* ==================== SOCIAL MEDIA SECTION ==================== */
+
+.social-media-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-media-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+.social-media-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+.social-media-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.social-media-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.social-media-header h2 {
+  font-size: 2.5rem;
+  color: var(--black);
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-orange) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.social-media-header p {
+  font-size: 1.1rem;
+  color: var(--gray-dark);
+  margin: 0;
+}
+
+.social-links-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: white;
+  border: 2px solid transparent;
+  min-width: 150px;
+}
+
+.social-link:hover {
+  border-color: var(--primary);
+  box-shadow: 0 8px 24px rgba(229, 57, 53, 0.2);
+}
+
+.social-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(229, 57, 53, 0.3);
+  transition: all 0.3s ease;
+}
+
+.social-link:hover .social-icon-wrapper {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(229, 57, 53, 0.5);
+}
+
+.social-logo {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.social-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--black);
+  transition: color 0.3s ease;
+}
+
+.social-link:hover .social-name {
+  color: var(--primary);
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+@media (max-width: 768px) {
+  .social-media-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .social-media-header h2 {
+    font-size: 2rem;
+  }
+
+  .social-media-header p {
+    font-size: 1rem;
+  }
+
+  .social-links-container {
+    gap: 2rem;
+  }
+
+  .social-link {
+    min-width: 130px;
+    padding: 1rem;
+  }
+
+  .social-icon-wrapper {
+    width: 70px;
+    height: 70px;
+  }
+
+  .social-logo {
+    width: 48%;
+    height: 48%;
+  }
+
+  .social-name {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-media-section {
+    padding: 2rem 1rem;
+  }
+
+  .social-media-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .social-media-header p {
+    font-size: 0.9rem;
+  }
+
+  .social-links-container {
+    gap: 1.5rem;
+    justify-content: space-around;
+  }
+
+  .social-link {
+    min-width: 110px;
+    padding: 0.8rem;
+  }
+
+  .social-icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  .social-logo {
+    width: 45%;
+    height: 45%;
+  }
+
+  .social-name {
+    font-size: 0.85rem;
+  }
+}

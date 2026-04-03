@@ -146,8 +146,8 @@ a:hover {
 
 /* ==================== HEADER & NAVIGATION ==================== */
 nav {
-  background: linear-gradient(90deg, var(--black) 0%, #37474F 50%, var(--primary) 100%);
-  padding: 1.5rem 0;
+  background: linear-gradient(90deg, var(--black) 0%, #37474F 50%, #8d1f1f 100%);
+  padding: 0.5rem 0;
   box-shadow: 0 4px 20px rgba(229, 57, 53, 0.25);
   position: sticky;
   top: 0;
@@ -362,9 +362,9 @@ nav.nav-hidden {
 .hero {
   background: linear-gradient(135deg, var(--black) 0%, #2a2a2a 100%);
   color: var(--white);
-  padding: 6rem 2rem;
+  padding: 2rem;
   text-align: center;
-  min-height: 600px;
+  min-height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -373,7 +373,7 @@ nav.nav-hidden {
 }
 
 .hero-vibrant {
-  background: linear-gradient(135deg, var(--black) 0%, #455A64 25%, #D32F2F 75%, var(--primary) 100%);
+  background: linear-gradient(135deg, var(--black) 0%, #455A64 25%, #8d1f1f 75%, var(--primary) 100%);
   position: relative;
 }
 
@@ -425,14 +425,21 @@ nav.nav-hidden {
   font-size: 3rem;
   margin-bottom: 1.5rem;
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  padding: 1.5rem 0;
+  overflow: visible;
 }
 
 .hero-emoji-row .emoji {
   animation: bounce 2s infinite;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .hero-emoji-row .emoji:nth-child(2) {
@@ -488,7 +495,8 @@ nav.nav-hidden {
   gap: 2rem;
   justify-content: center;
   margin-bottom: 2.5rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 .highlight-item {
@@ -548,6 +556,83 @@ nav.nav-hidden {
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+/* Hero Responsive - Tablet */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+    padding: 2rem 1.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-emoji-row {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+    gap: 0.8rem;
+    flex-wrap: nowrap;
+    padding: 1rem 0;
+  }
+
+  .hero-highlights {
+    display: none;
+  }
+
+  .btn-hero {
+    font-size: 0.9rem;
+    padding: 12px 24px;
+  }
+}
+
+/* Hero Responsive - Mobile */
+@media (max-width: 480px) {
+  .hero {
+    min-height: 100vh;
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+  }
+
+  .hero-emoji-row {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    gap: 0.6rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 0.8rem 0.5rem;
+  }
+
+  .hero-highlights {
+    display: none;
+  }
+
+  .btn-hero {
+    font-size: 0.85rem;
+    padding: 10px 20px;
+  }
+
+  .hero-cta {
+    gap: 0.8rem;
+  }
 }
 
 /* Gallery Hero Section */

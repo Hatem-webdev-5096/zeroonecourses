@@ -24,7 +24,7 @@ export const CourseCard = ({ course }) => {
       case 'onsite':
         return 'Onsite';
       case 'hybrid':
-        return 'Hybrid';
+        return 'Online & Onsite';
       default:
         return 'Course';
     }

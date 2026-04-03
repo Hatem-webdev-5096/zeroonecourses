@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import SocialMedia from '../components/SocialMedia';
 import '../styles/globals.css';
 
 export const Landing = () => {
@@ -11,7 +12,7 @@ export const Landing = () => {
       {/* Main Hero Section */}
       <motion.div
         className="hero hero-vibrant"
-        style={{ minHeight: '750px' }}
+        // style={{ minHeight: '750px' }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -225,6 +226,9 @@ export const Landing = () => {
           </div>
         </div>
       </section>
+
+      {/* Social Media Section */}
+      <SocialMedia />
     </div>
   );
 };

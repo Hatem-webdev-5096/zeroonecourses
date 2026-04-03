@@ -9,6 +9,8 @@ const CourseForm = ({ course, onSubmit, onClose }) => {
     short_description: '',
     price: '',
     location_type: 'online',
+    course_length_hours: '',
+    number_of_sessions: '',
     featured: false,
     image_base64: null,
   });
@@ -25,6 +27,8 @@ const CourseForm = ({ course, onSubmit, onClose }) => {
         short_description: course.short_description || '',
         price: course.price || '',
         location_type: course.location_type || 'online',
+        course_length_hours: course.course_length_hours || '',
+        number_of_sessions: course.number_of_sessions || '',
         featured: course.featured || false,
         image_base64: null,
       });
@@ -176,6 +180,38 @@ const CourseForm = ({ course, onSubmit, onClose }) => {
                 />
                 Feature this course
               </label>
+            </div>
+          </div>
+
+          <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="course_length_hours">Course Length (Hours)</label>
+              <input
+                type="number"
+                id="course_length_hours"
+                name="course_length_hours"
+                value={formData.course_length_hours}
+                onChange={handleInputChange}
+                placeholder="e.g., 40"
+                min="0"
+                step="1"
+                disabled={loading}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="number_of_sessions">Number of Sessions</label>
+              <input
+                type="number"
+                id="number_of_sessions"
+                name="number_of_sessions"
+                value={formData.number_of_sessions}
+                onChange={handleInputChange}
+                placeholder="e.g., 10"
+                min="0"
+                step="1"
+                disabled={loading}
+              />
             </div>
           </div>
 

@@ -44,7 +44,7 @@ router.get('/:id', async (req, res) => {
 // Create a new course (admin only)
 router.post('/', authMiddleware, async (req, res) => {
   try {
-    const { name, description, short_description, price, location_type, featured, image_base64 } = req.body;
+    const { name, description, short_description, price, location_type, course_length_hours, number_of_sessions, featured, image_base64 } = req.body;
 
     if (!name || !description || price === undefined || !location_type) {
       return res.status(400).json({ error: 'Missing required fields' });
@@ -67,10 +67,10 @@ router.post('/', authMiddleware, async (req, res) => {
     }
 
     const result = await pool.query(
-      `INSERT INTO courses (name, description, short_description, price, image_url, location_type, featured)
-       VALUES ($1, $2, $3, $4, $5, $6, $7)
+      `INSERT INTO courses (name, description, short_description, price, image_url, location_type, course_length_hours, number_of_sessions, featured)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
        RETURNING *`,
-      [name, description, short_description || description.substring(0, 200), price, image_url, location_type, featured || false]
+      [name, description, short_description || description.substring(0, 200), price, image_url, location_type, course_length_hours || null, number_of_sessions || null, featured || false]
     );
 
     res.status(201).json(result.rows[0]);
@@ -84,7 +84,7 @@ router.post('/', authMiddleware, async (req, res) => {
 router.put('/:id', authMiddleware, async (req, res) => {
   try {
     const { id } = req.params;
-    const { name, description, short_description, price, location_type, featured, image_base64 } = req.body;
+    const { name, description, short_description, price, location_type, course_length_hours, number_of_sessions, featured, image_base64 } = req.body;
 
     let image_url = undefined;
 
@@ -108,10 +108,12 @@ router.put('/:id', authMiddleware, async (req, res) => {
       short_description = COALESCE($3, short_description),
       price = COALESCE($4, price),
       location_type = COALESCE($5, location_type),
-      featured = COALESCE($6, featured),
+      course_length_hours = COALESCE($6, course_length_hours),
+      number_of_sessions = COALESCE($7, number_of_sessions),
+      featured = COALESCE($8, featured),
       updated_at = CURRENT_TIMESTAMP`;
 
-    const params = [name, description, short_description, price, location_type, featured];
+    const params = [name, description, short_description, price, location_type, course_length_hours, number_of_sessions, featured];
 
     if (image_url !== undefined) {
       updateQuery += `, image_url = $${params.length + 1}`;

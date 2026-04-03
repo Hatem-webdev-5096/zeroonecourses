@@ -8,6 +8,8 @@ const sampleCourses = [
     short_description: 'Learn React and build responsive web applications',
     price: 1500,
     location_type: 'hybrid',
+    course_length_hours: 40,
+    number_of_sessions: 10,
     featured: true,
   },
   {
@@ -16,6 +18,8 @@ const sampleCourses = [
     short_description: 'Master JavaScript basics and programming fundamentals',
     price: 1000,
     location_type: 'online',
+    course_length_hours: 30,
+    number_of_sessions: 8,
     featured: true,
   },
   {
@@ -24,6 +28,8 @@ const sampleCourses = [
     short_description: 'Expert-level Python programming and best practices',
     price: 1800,
     location_type: 'onsite',
+    course_length_hours: 50,
+    number_of_sessions: 12,
     featured: true,
   },
   {
@@ -32,6 +38,8 @@ const sampleCourses = [
     short_description: 'Complete guide to digital marketing strategies',
     price: 1200,
     location_type: 'hybrid',
+    course_length_hours: 35,
+    number_of_sessions: 9,
     featured: true,
   },
   {
@@ -40,6 +48,8 @@ const sampleCourses = [
     short_description: 'Master professional English communication',
     price: 900,
     location_type: 'online',
+    course_length_hours: 25,
+    number_of_sessions: 6,
     featured: false,
   },
   {
@@ -48,6 +58,8 @@ const sampleCourses = [
     short_description: 'Create stunning user interfaces and experiences',
     price: 1400,
     location_type: 'online',
+    course_length_hours: 45,
+    number_of_sessions: 11,
     featured: true,
   },
   {
@@ -56,6 +68,8 @@ const sampleCourses = [
     short_description: 'Professional data analysis and reporting',
     price: 800,
     location_type: 'onsite',
+    course_length_hours: 20,
+    number_of_sessions: 5,
     featured: false,
   },
   {
@@ -64,6 +78,8 @@ const sampleCourses = [
     short_description: 'Develop professional mobile applications',
     price: 2000,
     location_type: 'hybrid',
+    course_length_hours: 60,
+    number_of_sessions: 15,
     featured: true,
   },
 ];
@@ -74,10 +90,10 @@ async function seedDatabase() {
 
     for (const course of sampleCourses) {
       const result = await pool.query(
-        `INSERT INTO courses (name, description, short_description, price, location_type, featured)
-         VALUES ($1, $2, $3, $4, $5, $6)
+        `INSERT INTO courses (name, description, short_description, price, location_type, course_length_hours, number_of_sessions, featured)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
          RETURNING id`,
-        [course.name, course.description, course.short_description, course.price, course.location_type, course.featured]
+        [course.name, course.description, course.short_description, course.price, course.location_type, course.course_length_hours, course.number_of_sessions, course.featured]
       );
       console.log(`✓ Created course: ${course.name} (ID: ${result.rows[0].id})`);
     }
