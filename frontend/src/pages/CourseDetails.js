@@ -189,7 +189,7 @@ export const CourseDetails = () => {
               {/* <button className="btn btn-primary btn-lg" onClick={handleEnroll}>
                 Enroll Now
               </button> */}
-              <button className="btn btn-outline">Contact Us</button>
+              <button className="btn btn-outline" onClick={() => navigate('/contact')}>Contact Us</button>
             </div>
           </motion.div>
         </div>

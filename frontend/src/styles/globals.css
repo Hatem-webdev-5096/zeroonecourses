@@ -561,8 +561,11 @@ nav.nav-hidden {
 /* Hero Responsive - Tablet */
 @media (max-width: 768px) {
   .hero {
-    min-height: 100vh;
     padding: 2rem 1.5rem;
+  }
+
+  .hero-content {
+    min-height: inherit;
   }
 
   .hero-content h1 {
@@ -596,8 +599,12 @@ nav.nav-hidden {
 /* Hero Responsive - Mobile */
 @media (max-width: 480px) {
   .hero {
-    min-height: 100vh;
+
     padding: 1.5rem 1rem;
+  }
+
+  .hero-content {
+    min-height: inherit;
   }
 
   .hero-content h1 {

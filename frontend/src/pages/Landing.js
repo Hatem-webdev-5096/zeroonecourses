@@ -24,7 +24,7 @@ export const Landing = () => {
           <motion.div className="hero-shape hero-shape-3" animate={{ y: [0, 20, 0] }} transition={{ duration: 6, repeat: Infinity, delay: 1 }} />
         </div>
 
-        <div className="hero-content">
+        <div className="hero-content" >
           <motion.div
             className="hero-emoji-row"
             initial={{ opacity: 0, y: -20 }}
