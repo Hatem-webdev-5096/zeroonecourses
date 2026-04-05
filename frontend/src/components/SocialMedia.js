@@ -48,7 +48,7 @@ const SocialMedia = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.1, y: -5 }}
               >
-                <div className="social-icon-wrapper">
+                <div>
                   <img src={link.icon} alt={link.name} />
                 </div>
                 <span className="social-name">{link.name}</span>
