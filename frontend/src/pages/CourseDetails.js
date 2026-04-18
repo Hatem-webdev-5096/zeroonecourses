@@ -65,7 +65,7 @@ export const CourseDetails = () => {
       case 'onsite':
         return 'Onsite Course';
       case 'hybrid':
-        return 'Hybrid Course';
+        return 'Online & Onsite';
       default:
         return 'Course';
     }
