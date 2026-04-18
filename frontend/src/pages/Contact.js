@@ -116,9 +116,8 @@ export const Contact = () => {
                 <div className="contact-icon">📞</div>
                 <div className="contact-details">
                   <h4>Phone Numbers</h4>
-                  <p>Primary: +20 (100) 123-4567</p>
-                  <p>Secondary: +20 (100) 765-4321</p>
-                  <p>Hotline: +20 (100) 111-1111</p>
+                  <p>Primary: ‎+20 10 35671683</p>
+                  <p>Secondary: +20 01017978863</p>
                 </div>
               </div>
 
@@ -126,8 +125,9 @@ export const Contact = () => {
                 <div className="contact-icon">📍</div>
                 <div className="contact-details">
                   <h4>Location</h4>
-                  <p>123 Tech Street</p>
-                  <p>New Cairo, Cairo 11835</p>
+                  <p>Samira Mousa St.</p>
+                  <p>5th district, El Obour city, Cairo</p>
+                  <p>Block 16087, 1st floor, Appartment 3</p>
                   <p>Egypt</p>
                 </div>
               </div>
